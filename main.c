@@ -33,8 +33,13 @@ int main(void)
 
     while (1)
     {
-        while ((STCTRL_R & COUNT_FLAG) == 0){}
+        while ((STCTRL_R & COUNT_FLAG) == 0)
+        {
+            if (!(GPIO_PORTF_DATA_R & SW1)) {GPIO_PORTF_DATA_R |= BLUE;}
+            else {GPIO_PORTF_DATA_R &= ~BLUE;}
+        }
 
         GPIO_PORTF_DATA_R ^= RED;
+
     }
 }
