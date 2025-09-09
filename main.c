@@ -28,7 +28,7 @@ int main(void)
     GPIO_PORTF_DATA_R = 0x00;
 
     STCTRL_R = 0;
-    STRELOAD_R = 8000000 - 1;
+    STRELOAD_R = 16000000 - 1;
     STCTRL_R |= ENABLE | CLK_SRC;
 
     while (1)
